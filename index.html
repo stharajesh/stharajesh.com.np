@@ -1,55 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajesh Shrestha</title>
-    <style>
-        /* Google Fonts */
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+  <title>Rajesh Shrestha</title>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-/* Global */
-html{
-  min-height: 100%;
-  overflow: hidden;
-}
-body{
-  height: calc(100vh - 8em);
-  padding: 4em;
-  color: rgba(255,255,255,.75);
-  font-family: 'Anonymous Pro', monospace;  
-  background-color: rgb(25,25,25);  
-}
-.line-1{
-    position: relative;
-    top: 50%;  
-    width: 24em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);    
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+    }
 
-/* Animation */
-.anim-typewriter{
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-             blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from{width: 0;}
-  to{width: 30em;}
-}
-@keyframes blinkTextCursor{
-  from{border-right-color: rgba(255,255,255,.75);}
-  to{border-right-color: transparent;}
-}
-    </style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #111;
+    }
+
+    .main {
+      display: flex;
+    }
+
+    .main .text {
+      color: #fff;
+      font-size: 60px;
+      font-weight: 400;
+    }
+
+    .main .option {
+      margin-left: 15px;
+      height: 90px;
+      line-height: 90px;
+      overflow: hidden;
+    }
+
+    .option li {
+      list-style: none;
+      color: #face30;
+      font-size: 60px;
+      font-weight: 500;
+      position: relative;
+      top: 0;
+      animation: slide 12s steps(4) infinite;
+    }
+
+    @keyframes slide {
+      100% {
+        top: -360px;
+      }
+    }
+
+    .option li span {
+      position: relative;
+      margin: 5px 0;
+      line-height: 90px;
+    }
+
+    .option li span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #111;
+      border-left: 2px solid #face30;
+      animation: typing 3s steps(10) infinite;
+    }
+
+    @keyframes typing {
+
+      40%,
+      60% {
+        left: calc(100% + 30px);
+      }
+
+      100% {
+        left: 0;
+      }
+    }
+  </style>
 </head>
-<body>  
-    <p class="line-1 anim-typewriter">Hi! My name is Rajesh Shrestha & I am a Web Developer.</p>
+
+<body>
+  <div class="main">
+    <div class="text">I'm a</div>
+    <ul class="option">
+      <li><span>Programmer</span></li>
+      <li><span>Designer</span></li>
+      <li><span>Developer</span></li>
+      <li><span>Freelancer</span></li>
+    </ul>
+  </div>
 </body>
+
 </html>
